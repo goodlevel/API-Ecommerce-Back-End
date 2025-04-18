@@ -19,6 +19,22 @@ services:
             - '../src/DependencyInjection/'
             - '../src/Entity/'
             - '../src/Kernel.php'
+    App\Service\JsonStorageService:
+        arguments:
+            $storageDir: '%kernel.project_dir%/public/storage/'
+    
+    App\Security\JsonUserProvider:
+        arguments:
+            - '@App\Service\JsonStorageService'
+
+    lexik_jwt_authentication.jwt_authenticator:
+        class: Lexik\Bundle\JWTAuthenticationBundle\Security\Authenticator\JWTAuthenticator
+        arguments:
+            - '@lexik_jwt_authentication.jwt_manager'
+            - '@event_dispatcher'
+            - '@lexik_jwt_authentication.extractor.chain_extractor'
+        tags: ['security.authenticator']
+    
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones

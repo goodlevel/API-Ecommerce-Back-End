@@ -7,14 +7,23 @@
         "php": ">=7.2.5",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/annotations": "*",
+        "doctrine/doctrine-bundle": "*",
+        "doctrine/orm": "*",
+        "lexik/jwt-authentication-bundle": "2.16",
+        "nelmio/api-doc-bundle": "^4.38",
+        "sensio/framework-extra-bundle": "*",
+        "symfony/asset": "5.4.*",
         "symfony/console": "5.4.*",
         "symfony/dotenv": "5.4.*",
         "symfony/flex": "^1.17|^2",
         "symfony/framework-bundle": "5.4.*",
         "symfony/runtime": "5.4.*",
-        "symfony/yaml": "5.4.*"
-    },
-    "require-dev": {
+        "symfony/security-bundle": "5.4",
+        "symfony/twig-bundle": "5.4.*",
+        "symfony/yaml": "5.4.*",
+        "twig/extra-bundle": "^2.12|^3.0",
+        "twig/twig": "^2.12|^3.0"
     },
     "config": {
         "allow-plugins": {
@@ -64,5 +73,9 @@
             "allow-contrib": false,
             "require": "5.4.*"
         }
+    },
+    "require-dev": {
+        "doctrine/doctrine-fixtures-bundle": "*",
+        "symfony/maker-bundle": "^1.43"
     }
 }

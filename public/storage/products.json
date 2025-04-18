@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "code": "AUDIO-1000",
+        "name": "Premium Wireless Headphones",
+        "description": "Noise-cancelling wireless headphones with 30-hour battery life",
+        "image": "https:\/\/example.com\/images\/headphones.jpg",
+        "category": "Electronics\/Audio",
+        "price": 200,
+        "quantity": 100,
+        "internalReference": "INT-HEAD-2023",
+        "shellId": 42,
+        "inventoryStatus": "INSTOCK",
+        "rating": 4.8,
+        "createdAt": "2025-04-17 22:20:05",
+        "updatedAt": "2025-04-17 22:47:11"
+    }
+]

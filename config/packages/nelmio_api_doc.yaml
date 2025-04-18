@@ -1,0 +1,159 @@
+nelmio_api_doc:
+    documentation:
+        info:
+            title: "E-commerce API"
+            version: "1.0.0"
+            description: "API for e-commerce platform with authentication, products, cart and wishlist management"
+
+        servers:
+            - url: "http://127.0.0.1:8000"
+              description: "Local development server"
+
+        components:
+            securitySchemes:
+                bearerAuth:
+                    type: http
+                    scheme: bearer
+                    bearerFormat: JWT
+
+            schemas:
+                User:
+                    type: object
+                    properties:
+                        id:
+                            type: integer
+                            example: 1
+                        username:
+                            type: string
+                            example: "johndoe"
+                        firstname:
+                            type: string
+                            example: "John"
+                        email:
+                            type: string
+                            format: email
+                            example: "john@example.com"
+
+                Product:
+                    type: object
+                    properties:
+                        id:
+                            type: integer
+                            example: 1
+                        code:
+                            type: string
+                            example: "P00901"
+                        name:
+                            type: string
+                            example: "Smartphone"
+                        description:
+                            type: string
+                            example: "Latest model with advanced features"
+                        image:
+                            type: string
+                            nullable: true
+                        category:
+                            type: string
+                            example: "Electronics"
+                        price:
+                            type: number
+                            format: float
+                            example: 599.99
+                        quantity:
+                            type: integer
+                            example: 10
+                        internalReference:
+                            type: string
+                            example: "INT-001"
+                        shellId:
+                            type: integer
+                            example: 1
+                        inventoryStatus:
+                            type: string
+                            example: "INSTOCK"
+                        rating:
+                            type: number
+                            format: float
+                            example: 4.5
+                        createdAt:
+                            type: string
+                            format: date-time
+                        updatedAt:
+                            type: string
+                            format: date-time
+
+                Cart:
+                    type: object
+                    properties:
+                        id:
+                            type: integer
+                            example: 1
+                        userId:
+                            type: integer
+                            example: 1
+                        items:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    productId:
+                                        type: integer
+                                        example: 1
+                                    quantity:
+                                        type: integer
+                                        example: 2
+                        totalItems:
+                            type: integer
+                            example: 3
+                        createdAt:
+                            type: string
+                            format: date-time
+                        updatedAt:
+                            type: string
+                            format: date-time
+
+                Wishlist:
+                    type: object
+                    properties:
+                        id:
+                            type: integer
+                            example: 1
+                        userId:
+                            type: integer
+                            example: 1
+                        items:
+                            type: array
+                            items:
+                                type: object
+                                properties:
+                                    productId:
+                                        type: integer
+                                        example: 1
+                        totalItems:
+                            type: integer
+                            example: 2
+                        createdAt:
+                            type: string
+                            format: date-time
+                        updatedAt:
+                            type: string
+                            format: date-time
+
+                Error:
+                    type: object
+                    properties:
+                        error:
+                            type: string
+                            example: "Validation error"
+                        message:
+                            type: string
+                            example: "Invalid input data"
+                        errors:
+                            type: object
+                            additionalProperties:
+                                type: string
+
+    areas: # optional - to restrict which routes are included
+        path_patterns:
+            - ^/api
+

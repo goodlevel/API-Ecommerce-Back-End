@@ -1,0 +1,32 @@
+# config/packages/security.yaml
+security:
+    enable_authenticator_manager: true
+    password_hashers:
+        App\Entity\User:
+            algorithm: bcrypt
+
+    providers:
+        json_user_provider:
+            id: App\Security\UserProvider
+
+    firewalls:
+            login:
+                pattern: ^/api/token
+                stateless: true
+                json_login:
+                    check_path: /api/token
+                    username_path: email  # Tell it to use email instead of username
+                    password_path: password
+                    success_handler: lexik_jwt_authentication.handler.authentication_success
+                    failure_handler: lexik_jwt_authentication.handler.authentication_failure
+
+            api:
+                pattern:   ^/api
+                stateless: true
+                jwt: ~
+
+    access_control:
+        - { path: ^/api/token, roles: PUBLIC_ACCESS }
+        - { path: ^/api/account, roles: PUBLIC_ACCESS }
+        - { path: ^/api/doc, roles: PUBLIC_ACCESS }
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }

@@ -1,0 +1,21 @@
+[
+    {
+        "id": 1,
+        "userId": 2,
+        "items": [
+            {
+                "productId": 1,
+                "quantity": 90
+            }
+        ],
+        "createdAt": "2025-04-18 11:59:15",
+        "updatedAt": "2025-04-18 11:59:15"
+    },
+    {
+        "id": 2,
+        "userId": 1,
+        "items": [],
+        "createdAt": "2025-04-18 21:56:18",
+        "updatedAt": "2025-04-18 21:56:18"
+    }
+]

@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "paths": {},
+    "components": {
+        "schemas": {
+            "Error": {
+                "properties": {
+                    "error": {
+                        "type": "string",
+                        "example": "Validation error"
+                    },
+                    "message": {
+                        "type": "string",
+                        "example": "Invalid input data"
+                    },
+                    "errors": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "responses": {
+            "401": {
+                "description": "Unauthorized"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Authentication",
+            "description": "Authentication"
+        },
+        {
+            "name": "Cart",
+            "description": "Cart"
+        },
+        {
+            "name": "Wishlist",
+            "description": "Wishlist"
+        },
+        {
+            "name": "Products",
+            "description": "Products"
+        }
+    ]
+}

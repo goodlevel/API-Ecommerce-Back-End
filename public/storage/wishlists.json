@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "userId": 2,
+        "items": [
+            {
+                "productId": 1,
+                "quantity": 1
+            }
+        ],
+        "createdAt": "2025-04-18 15:03:23",
+        "updatedAt": "2025-04-18 15:07:46"
+    }
+]
